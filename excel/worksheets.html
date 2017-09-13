@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="browsermode" content="application">
+<meta name="screen-orientation" content="portrait">
+<meta http-equiv="Content-Type" content="application/xhtml+xml;charset=utf-8" />
+<meta name="x5-page-mode" content="app">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-transform" /> 
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+
+<style>
+//div{ width:200px; height:200px; overflow:auto;}
+input{height:32px}
+</style>
+</head>
+<body>
+<pre>
+Worksheets对象集
+代表当前工作簿所有的工作表(Worksheet)的集合。
+<一>属性
+1、Count属性，返回当前工作簿中的的工作表的数量
+<二>方法
+1、Add方法，向工作表对象集中添加一个新的工作表对象，格式如下：
+Worksheets.Add Before,After,Count,Type
+Before和After参数指哪一个工作表之前或之后插入新工作表。取值为Worksheet
+如：Worksheets.Add Before:=Worksheets("Sheet2"),则相当于在Sheet2工作表之前插入了一个新的工作表
+</pre>
+</body>
+</html>
