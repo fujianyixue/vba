@@ -1,0 +1,65 @@
+Application对象
+此对象指Excel应用程序的工作环境。
+＜一＞属性
+1.Caption属性
+含义：Excel应用程序标题栏显示的文本。
+举例：Application.caption=“船员管理系统”，如赋值Empty,则恢复Excel默认的标题栏。
+2.Cursor属性
+含义：Excel中鼠标的形状。
+表2 Cursor属性
+属性值 鼠标形状
+xlDefault 缺少型值，鼠标呈缺少形状
+xlWait 等待型值，鼠标呈不断翻转的沙漏形状
+xlNorthwestArrow 箭头型值，鼠标呈标准箭头形状
+xlIBeam 文本型值，鼠标呈“I”字形以等待用户输入文本
+操作：Application.Cursor=xlWait等。
+3、DisplayAlerts属性
+含义：用以确定是否显示系统的应用提示和警告信息，如果不想显示，则把些属性设为false，反之亦然。
+4、DisplayFormulaBar属性
+含义：用以确定是否显示公式编辑栏
+5、DisplayScrollBars属性
+含义：用以确定是否显示Excel的滚动条
+6、DisplayStatusBar属性
+含义：用以确定是否显示Excel的状态栏
+7、EnableCancelkey属性
+含义：用以确定是否允许用户中断正在执行着的VBA程序。缺省情况下，在VBA程序执行过程中，用户按下Ctrl+Break能够中断VBA程序的执行。此时此属性即值为xlInterrupt。若要禁止中断VBA程序，由赋值为xlDisabled；若需要VBA执行过程中遇到错误进中止，由赋值为xlErrorHandler
+8、ScreenUpdating属性
+含义：用以确定是否显示VBA程序的中间运算结果。
+9、StatusBar属性
+含义：设置状态栏的文本
+10、ActiveWorkbook属性
+含义：如表1介绍。
+11、ActiveSheet
+含义：如表1介绍。
+12、ActiveCell属性
+含义：如表1介绍。
+13、ThisWorkBook属性
+含义：用以返回正在执行着VBA程序所在的工作簿对象。这不是当前工作簿。例如有多个工作簿打开时，ActiveWorkbook属性返回当前工作簿对象，ThisWorkbook返回正在运行着VBA程序所在工作簿对象。
+14、PathSeparator属性
+含义：返回文件文件路径分隔符“\”，该属性是一个只读属性。
+举例：Dim strPath as String
+strPath=Application.ThisWorkbook.Path&Application.PathSeperator
+Workbooks.Open strPath&"myExcel.xls"
+15、UserName属性
+含义：设置当前用户名称。缺省用户是由Excel选项对话框的“常规”选项卡中“用户姓名”决定的。用户可以从“工具”菜单中选择“选项”命令来打开选项并在“常规”选项卡的“用户姓名”文本框中重新设置缺省的用户名称。
+＜二＞方法
+1、Calculate方法
+含义：对Excel打开的工作簿中所有的公式进行重新计算。
+2、Goto方法
+含义：选择工作簿中的一个Range对象或一个VBA过程，格式如下：
+Application.Goto Reference,Scroll
+Reference参数表示Goto方法的目的地,Scroll参数若为True,滚动条滚动以使Range对象出现在工作簿窗口左上角，为False，当前工作簿窗口不属性变化。缺省值为Galse
+举例：Application.Goto Range("C3"),True
+3、InputBox方法
+含义：用于打开一个输入对话框，允许用户输入数据。格式如下：
+Application.InputBox(prompt,title,left,top,helpFile,helpContextID,type)
+prompt参数              用于设置输入对话框的提示信息
+title参数                用于设置输入对话框的标题文字
+default参数              用于设置输入对话框的缺省输入值
+left和top参数            用于设置输入对话框左上角的坐标值
+helpFile参数             用于设置输入对话框在线帮助的名称
+helpContextID参数        用于设置输入对话框在线帮助主题的上下文标识号
+type参数                 用于设置输入对话框输入数据的类型。缺省情况下，为文本型
+举例：UserValue=Application.InputBox("请输入数据","数据输入",Type:=7)
+4、Onkey方法
+含义：按下某个或组合键时执行一段VBA代码。自己尝试一下就知道了,也可看一下VB编辑器的提示（即输入Applicatio.Onkey后，VB编辑器弹出的下拉提示。
