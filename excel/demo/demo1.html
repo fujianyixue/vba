@@ -1,0 +1,82 @@
+这是一个完整的小型加载宏，当它加载后，在工具菜单的末尾将增加一个菜单项，点按该菜单将对当前选定区域求平均值、小值平均值、大值平均值，并以对话框形式显示结果。另外，你也可以以工作表函数形式使用其中的宏，只是略有限制。
+限于篇幅，本程序中未处理异常。
+'当工作簿打开时执行
+Sub Auto_Open()
+'在工具菜单中添加按钮
+With Application.CommandBars("Tools").Controls.Add(msoControlButton, 1)
+.Caption = "大小平均值" '按钮文本
+.Tag = "Example" '按钮标签
+.OnAction = ThisWorkbook.Name & "!AverageMM" '按钮命令宏
+End With
+End Sub
+'当工作簿关闭时执行
+Sub Auto_Close()
+Dim colMyButtons As CommandBarControls
+Dim ctrMine As CommandBarButton
+'查找该工程添加的菜单按钮及其复制件
+Set colMyButtons = Application.CommandBars.FindControls(msoControlButton, 1, "Example")
+'如果已被用户手工删除则退出过程
+If colMyButtons Is Nothing Then Exit Sub
+'删除所有与该工程相关的菜单按钮
+For Each ctrMine In colMyButtons
+ctrMine.Delete
+Next
+End Sub
+'实现功能的宏函数
+Function AverageMM(Optional RA As Range = Nothing, Optional OP As Integer = 0)
+Dim RAG As Range, CL As Range
+Dim A As Single, MA As Single, MI As Single
+Dim T As Integer, TMA As Integer, TMI As Integer
+Dim MSG As String
+If RA Is Nothing Then
+Set RAG = Selection
+Else
+Set RAG = RA
+End If
+For Each CL In RAG
+If CL.Value <> "" And IsNumeric(CL.Value) Then
+T = T + 1
+A = A + CL.Value
+End If
+Next
+If T <> 0 Then
+A = A / T
+Else
+Exit Function
+End If
+For Each CL In RAG
+If CL.Value <> "" And IsNumeric(CL.Value) Then
+If CL.Value - A > 0.001 Then
+TMA = TMA + 1
+MA = MA + CL.Value
+ElseIf CL.Value - A < -0.001 Then
+TMI = TMI + 1
+MI = MI + CL.Value
+End If
+End If
+Next
+If TMA = 0 Then
+MA = A
+Else
+MA = MA / TMA
+End If
+If TMI = 0 Then
+MI = A
+Else
+MI = MI / TMI
+End If
+If RA Is Nothing Then
+MSG = "有效单元共：" & T & "个" & vbCrLf & "平均值：" & Space(2) & _
+A & vbCrLf & "大值平均：" & MA & vbCrLf & "小值平均：" & MI & Space(20)
+MsgBox MSG, vbInformation, "平均值"
+Else
+Select Case OP
+Case -1
+AverageMM = MI
+Case 0
+AverageMM = A
+Case 1
+AverageMM = MA
+End Select
+End If
+End Function
