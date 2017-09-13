@@ -1,0 +1,382 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="browsermode" content="application">
+<meta name="screen-orientation" content="portrait">
+<meta http-equiv="Content-Type" content="application/xhtml+xml;charset=utf-8" />
+<meta name="x5-page-mode" content="app">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-transform" /> 
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+
+<style>
+//div{ width:200px; height:200px; overflow:auto;}
+input{height:32px}
+</style>
+</head>
+<body>
+<table border="1">
+  <tr>
+    <th>对象名</th>
+    <th>含义</th>
+  </tr>
+  <tr>
+    <td>ActiveWorkbook</td>
+    <td>当前工作簿</td>
+  </tr>
+  <tr>
+    <td>ActiveSheet</td>
+    <td>当前工作表</td>
+  </tr>
+  <tr>
+    <td>ActiveCell</td>
+    <td>当前工作表活动单元格</td>
+  </tr>
+  <tr>
+    <td>ActiveChart</td>
+    <td>当前工作簿活动图表</td>
+  </tr>
+  <tr>
+    <td>Selection</td>
+    <td>被选中的部分</td>
+  </tr>
+  <tr>
+    <td>Application</td>
+    <td>应用程序的工作环境</td>
+  </tr>
+  <tr>
+    <td>Workbooks</td>
+    <td>当前所有打开的工作簿对象的集合</td>
+  </tr>
+  <tr>
+    <td>Workbook</td>
+    <td>代表一个独立的工作簿文件</td>
+  </tr>
+  <tr>
+    <td>Worksheets</td>
+    <td>代表当前工作簿所有的工作表的集合</td>
+  </tr>
+  <tr>
+    <td>Worksheet</td>
+    <td>代表工作簿一个独立的工作表</td>
+  </tr>
+  <tr>
+    <td>Range</td>
+    <td>代表一个半桥区域，可以由多个半桥组成，也可是由一个单元格组成</td>
+  </tr>
+</table>
+
+<table border="1">
+  <tr>
+    <th colspan="2"><a href="application.html">Application</a></th>
+  </tr>
+  <tr>
+    <th>属性</th>
+    <th>说明</th>
+  </tr>
+  <tr>
+    <td>Caption</td>
+    <td>应用程序标题栏显示的文本</td>
+  </tr>
+  <tr>
+    <td>Cursor</td>
+    <td>鼠标的形状</td>
+  </tr>
+  <tr>
+    <td>DisplayAlerts</td>
+    <td>系统的应用提示和警告信息</td>
+  </tr>
+  <tr>
+    <td>DisplayFormulaBar</td>
+    <td>用以确定是否显示公式编辑栏</td>
+  </tr>
+  <tr>
+    <td>DisplayScrollBars</td>
+    <td>用以确定是否显示Excel的滚动条</td>
+  </tr>
+  <tr>
+    <td>DisplayStatusBar</td>
+    <td>用以确定是否显示Excel的状态栏</td>
+  </tr>
+  <tr>
+    <td>EnableCancelkey</td>
+    <td>用以确定是否允许用户中断正在执行着的VBA程序</td>
+  </tr>
+  <tr>
+    <td>ScreenUpdating</td>
+    <td>用以确定是否显示VBA程序的中间运算结果</td>
+  </tr>
+  <tr>
+    <td>StatusBar</td>
+    <td>设置状态栏的文本</td>
+  </tr>
+  <tr>
+    <td>ActiveWorkbook</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>ActiveSheet</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>ActiveCell</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>ThisWorkBook</td>
+    <td>用以返回正在执行着VBA程序所在的工作簿对象</td>
+  </tr>
+  <tr>
+    <td>PathSeparator</td>
+    <td>返回文件文件路径分隔符“\”，该属性是一个只读属性</td>
+  </tr>
+  <tr>
+    <td>UserName</td>
+    <td>设置当前用户名称</td>
+  </tr>
+  <tr>
+    <th>方法</th>
+    <td>说明</td>
+  </tr>
+  <tr>
+    <td>Calculate</td>
+    <td>对Excel打开的工作簿中所有的公式进行重新计算</td>
+  </tr>
+  <tr>
+    <td>Goto</td>
+    <td>选择工作簿中的一个Range对象或一个VBA过程</td>
+  </tr>
+  <tr>
+    <td>InputBox</td>
+    <td>用于打开一个输入对话框，允许用户输入数据</td>
+  </tr>
+  <tr>
+    <td>Onkey</td>
+    <td>按下某个或组合键时执行一段VBA代码</td>
+  </tr>
+</tabel>
+
+<tabel border="1">
+  <tr>
+    <th colspan="2"><a href="workbooks.html">Workbooks</a></th>
+  </tr>
+  <tr>
+    <th>属性</th>
+    <th>说明</th>
+  </tr>
+  <tr>
+    <td>Count</td>
+    <td>只读，返回Excel打开的工作簿数</td>
+  </tr>
+  <tr>
+    <th>方法</th>
+    <th>说明</th>
+  </tr>
+  <tr>
+    <td>Add</td>
+    <td>向工作簿对象集中一个新的工作簿</td>
+  </tr>
+  <tr>
+    <td>Open</td>
+    <td>打开一个指定的工作簿</td>
+  </tr>
+  <tr>
+    <td>Close</td>
+    <td>关闭一个工作簿文件</td>
+  </tr>
+</tabel>
+<tabel border="1">
+  <tr>
+    <th colspan="2"><a href="workbook.html">Workbook</a></th>
+  </tr>
+  <tr>
+    <th>属性</th>
+    <th>说明</th>
+  </tr>
+  <tr>
+    <td>ActiveSheet</td>
+    <td>返回当前工作簿中的活动工作表对象</td>
+  </tr>
+  <tr>
+    <td>Author</td>
+    <td>返回或设定工作簿的作者姓名</td>
+  </tr>
+  <tr>
+    <td>Saved</td>
+    <td>用于瓢工作簿文件是否做过修改</td>
+  </tr>
+  <tr>
+    <th>方法</th>
+    <th>说明</th>
+  </tr>
+  <tr>
+    <td>Activate</td>
+    <td>用于使一个工作簿为当前活动工作簿</td>
+  </tr>
+  <tr>
+    <td>Close</td>
+    <td>用于关闭指定的工作簿</td>
+  </tr>
+  <tr>
+    <td>Save</td>
+    <td>用于保存指定的工作簿</td>
+  </tr>
+  <tr>
+    <td>SaveAs</td>
+    <td>用于另存为指定的工作簿</td>
+  </tr>
+</tabel>
+<tabel border="1">
+  <tr>
+    <th colspan="2"><a href="worksheets.html">Worksheets</a></th>
+  </tr>
+  <tr>
+    <th>属性</th>
+    <th>说明</th>
+  </tr>
+  <tr>
+    <td>Count</td>
+    <td>返回当前工作簿中的的工作表的数量</td>
+  </tr>
+  <tr>
+    <td>方法</td>
+    <td>说明</td>
+  </tr>
+  <tr>
+    <td>Add</td>
+    <td>向工作表对象集中添加一个新的工作表对象</td>
+  </tr>
+</tabel>
+<tabel border="1">
+  <tr>
+    <th colspan="2"><a href="worksheet.html">Worksheet</a></th>
+  </tr>
+  <tr>
+    <td>属性</td>
+    <td>说明</td>
+  </tr>
+  <tr>
+    <td>Name</td>
+    <td>设置或返回工作表对象的名称</td>
+  </tr>
+  <tr>
+    <td>Visible</td>
+    <td>确定是否隐藏某个工作表</td>
+  </tr>
+  <tr>
+    <th>方法</th>
+    <th>说明</th>
+  </tr>
+  <tr>
+    <td>Calculate</td>
+    <td>对指定的工作表中的所有公式进行重新计算</td>
+  </tr>
+  <tr>
+    <td>Copy</td>
+    <td>用于复制指定的工作表</td>
+  </tr>
+  <tr>
+    <td>Move</td>
+    <td>移动指定的工作表</td>
+  </tr>
+  <tr>
+    <td>Delete</td>
+    <td>无参数删除指定的工作表</td>
+  </tr>
+  <tr>
+    <td>Cell</td>
+    <td>获取指定工作表指定行列的某个单元格</td>
+  </tr>
+</tabel>
+<tabel border="1">
+  <tr>
+    <th colspan="2"><a href="range.html">Range</a></th>
+  </tr>
+  <tr>
+    <th>属性</th>
+    <th>说明</th>
+  </tr>
+  <tr>
+    <td>FormulaR1C1</td>
+    <td>为指定的单元格或单元格区域建立和存储公式</td>
+  </tr>
+  <tr>
+    <td>Value</td>
+    <td>为指定的单元格或单元格区域赋值</td>
+  </tr>
+  <tr>
+    <td>Cell</td>
+    <td>以指定的单元格为苦战来描述被引用的单元格</td>
+  </tr>
+  <tr>
+    <td>Offset</td>
+    <td>以指定的单元格为苦战来描述被引用的单元格</td>
+  </tr>
+  <tr>
+    <td>Name</td>
+    <td>返回或设定指定的单元格或单元格区域的名称</td>
+  </tr>
+  <tr>
+    <td>Count</td>
+    <td>返回指定的单元格区域中包含的单元格的数目</td>
+  </tr>
+  <tr>
+    <td>CurrentRegion</td>
+    <td>返回以某个单元格为基点的存储有数据的一个连结的单元格区域</td>
+  </tr>
+  <tr>
+    <th>方法</th>
+    <th>说明</th>
+  </tr>
+  <tr>
+    <td>Select</td>
+    <td>用于选择指定的单元格区域</td>
+  </tr>
+  <tr>
+    <td>Activate</td>
+    <td>用于选择指定的单元格并指定其成为活动单元格</td>
+  </tr>
+  <tr>
+    <td>AutoFit</td>
+    <td>调整选定的单元格区域所在行和列的行高与列宽，使其行高与列宽自动设定的最佳的高度与宽度</td>
+  </tr>
+  <tr>
+    <td>Clear</td>
+    <td>清除指定的单元格区域的内容，格式和批注</td>
+  </tr>
+  <tr>
+    <td>ClearContents</td>
+    <td>清除指定的单元格区域的内容</td>
+  </tr>
+  <tr>
+    <td>ClearFormats</td>
+    <td>清除指定的单元格区域的格式</td>
+  </tr>
+  <tr>
+    <td>ClearComments</td>
+    <td>清除指定的单元格区域的批注</td>
+  </tr>
+  <tr>
+    <td>ClearNotes</td>
+    <td>清除指定的单元格区域的批注</td>
+  </tr>
+  <tr>
+    <td>Copy</td>
+    <td>将指定单元格区域中的数据库复制到剪贴板或指定的目的单元格区域中</td>
+  </tr>
+  <tr>
+    <td>Cut</td>
+    <td>将指定单元格区域中的数据库剪切到剪贴板或指定的目的单元格区域中</td>
+  </tr>
+  <tr>
+    <td>PasteSpecial</td>
+    <td>用于将剪贴板中复制或剪切下来的单元格区域中的数据库有选择地粘贴到指定的目的单元格区域中</td>
+  </tr>
+</table>
+<body >
+<script>
+</script>
+
+
+</body>
+</html>
