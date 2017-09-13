@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="browsermode" content="application">
+<meta name="screen-orientation" content="portrait">
+<meta http-equiv="Content-Type" content="application/xhtml+xml;charset=utf-8" />
+<meta name="x5-page-mode" content="app">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-transform" /> 
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+
+<style>
+//div{ width:200px; height:200px; overflow:auto;}
+input{height:32px}
+</style>
+</head>
+<body>
+<pre>
+Range对象
+代表一个半桥区域，可以由多个半桥组成，也可是由一个单元格组成。
+引用单元格可用以下两种方法：
+一是使用单元格引用,如Range("A1"),Range("A1:C3")
+二是使用单元格区域名称，如Range("myRange")。
+<一>属性
+1、FormulaR1C1属性，为指定的单元格或单元格区域建立和存储公式，
+如Range("C5").FormulaR1C1="=SUM(R[-4]C:R[-1]C)"
+2、Value属性，为指定的单元格或单元格区域赋值，如为多个单元格，则都赋为同样的值
+3、Cell属性，以指定的单元格为苦战来描述被引用的单元格，把指定的单元格视为第1行第1列
+格式：Range-Object.Cells(Row,Col)
+4、Offset，以指定的单元格为苦战来描述被引用的单元格，把指定的单元格视为第0行第0列
+格式：Range-Object.Cells(Row,Col)
+5、Name属性，返回或设定指定的单元格或单元格区域的名称，然后在VBA中，可以直接用名称为引用它
+6、Count属性，返回指定的单元格区域中包含的单元格的数目，只读
+7、CurrentRegion属性，返回以某个单元格为基点的存储有数据的一个连结的单元格区域
+<二>方法
+1、Select方法方法，用于选择指定的单元格区域，执行后，该单元格区域左上角的第一个单元格成为活动单元格
+如Range("A1:C3").Select,Range("A1:C3,D5:E6,A8:E8).Select
+2、Activate方法，用于选择指定的单元格并指定其成为活动单元格，当然只有该单元格区域左上角的第一个单元格成为活动单元格。
+3、AutoFit方法，调整选定的单元格区域所在行和列的行高与列宽，使其行高与列宽自动设定的最佳的高度与宽度。
+如:Range("A4").CurrentRegion.Select
+Selection.Rows.AutoFit
+4、Clear方法，清除指定的单元格区域的内容，格式和批注，相当于“编辑－＞清除－＞全部”
+如:Range("A4:C5").Clear
+5、ClearContents方法，清除指定的单元格区域的内容，相当于“编辑－＞清除－＞内容”
+6、ClearFormats方法，清除指定的单元格区域的内容，相当于“编辑－＞清除－＞格式”
+7、ClearComments和ClearNotes方法，清除指定的单元格区域的内容，相当于“编辑－＞清除－＞批注”
+8、Copy方法，将指定单元格区域中的数据库复制到剪贴板或指定的目的单元格区域中
+9、Cut方法，将指定单元格区域中的数据库剪切到剪贴板或指定的目的单元格区域中
+10、PasteSpecial方法，用于将剪贴板中复制或剪切下来的单元格区域中的数据库有选择地粘贴到指定的目的单元格区域中
+格式：Range-Object.PasteSpecial Paste,Operation,ShipBlanks,Transpose
+Paste参数规定了选择体积类型的数据进行粘贴，如公式，内容，批注等，具体取值可参考VB编辑器中的提示
+</pre>
+</body>
+</html>
