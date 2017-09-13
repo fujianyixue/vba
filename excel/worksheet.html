@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="browsermode" content="application">
+<meta name="screen-orientation" content="portrait">
+<meta http-equiv="Content-Type" content="application/xhtml+xml;charset=utf-8" />
+<meta name="x5-page-mode" content="app">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-transform" /> 
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+
+<style>
+//div{ width:200px; height:200px; overflow:auto;}
+input{height:32px}
+</style>
+</head>
+<body>
+<pre>
+Worksheet对象
+代表工作簿一个独立的工作表。
+获取某个工作表，可以用Worksheets("办公费用"),也可以用Worksheets(3)之类的语句
+<一>属性
+1、Name属性，设置或返回工作表对象的名称
+2、Visible属性，确定是否隐藏某个工作表
+<二>方法
+1、Calculate法，对指定的工作表中的所有公式进行重新计算
+2、Copy方法,用于复制指定的工作表，并放置在指定的位置，实际是一个复制与粘贴并重的函数,
+格式：Worksheet-Object.Copy Before,After
+如Worksheet("Sheet2").Copy After:=Worksheets("办公费用"),相当于把Sheet2工作表复制，并把它放置在名为“办公费用”的工作表之后
+3、Move方法，移动指定的工作表并放置在指定的位置，用户同Copy方法，区别只天于复制与剪切之不同
+4、Delete方法，无参数删除指定的工作表，如Worksheet("Sheet2").Delete
+5、Cell方法，获取指定工作表指定行列的某个单元格
+格式：Worksheet-Object.Cells(Row,Col),Row,Col为整型，行列值都从1开始
+如Worksheet("Sheet2").Cell(1,1)，相当于获取Sheet2工作表的第一行第一列的单元格
+</pre>
+</body>
+</html>
